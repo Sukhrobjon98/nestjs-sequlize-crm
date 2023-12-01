@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  database:
+    container_name: database
+    image: mysql:8.0.29
+    environment:
+      MYSQL_DATABASE: app
+      MYSQL_ROOT_PASSWORD: password
+    volumes:
+      - database:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+volumes:
+  database:
